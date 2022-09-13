@@ -9,14 +9,7 @@ let package = Package(
     products: [
         .library(
             name: "InfiniteLayout",
-            targets: ["InfiniteLayout"]),
-        .library(
-            name: "RxInfiniteLayout",
-            targets: ["RxInfiniteLayout"]),
-    ],
-    dependencies: [
-        .package(url: "https://github.com/ReactiveX/RxSwift.git", .upToNextMajor(from: "6.0.0")),
-        .package(url: "https://github.com/RxSwiftCommunity/RxDataSources.git", .upToNextMajor(from: "5.0.0")),
+            targets: ["InfiniteLayout"])
     ],
     targets: [
         .target(
@@ -27,11 +20,6 @@ let package = Package(
         .target(
             name: "InfiniteLayout",
             dependencies: ["CocoaProxy"]
-        ),
-        .target(
-            name: "RxInfiniteLayout",
-            dependencies: ["InfiniteLayout", "RxSwift", "RxCocoa", "RxDataSources"],
-            path: "Sources/Rx"
-        ),
+        )
     ]
 )
